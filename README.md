@@ -23,3 +23,14 @@ The Ensemble model achieved an accuracy of **>84%** on the independent test set,
 ## 🛠 Usage
 1. Install dependencies: `pip install -r requirements.txt`
 2. Run training: `python model_training.py`
+
+## 📚 References & Context
+This project was developed independently as part of an AI Summer School research initiative (Shahid Beheshti University, 2023). The methodology aligns with state-of-the-art approaches in peptide bioinformatics, specifically utilizing physicochemical feature encoding.
+
+The dataset curation and modeling strategy were informed by benchmarks established in:
+1. **C2Pred:** Tang H, et al. "Prediction of cell-penetrating peptides using the random forest algorithm with physicochemical properties." (2016).
+2. **MLCPP:** Manavalan B, et al. "MLCPP: Machine Learning-based Prediction of Cell-Penetrating Peptides." (2018).
+3. **KELM-CPPpred:** Pandey G, et al. (Source of the KELM comparison benchmarks).
+
+**Differentiation:**
+Unlike studies that rely on reduced feature sets, this pipeline implements a high-dimensional feature space (566 AAindex vectors) combined with a soft-voting ensemble architecture to maximize generalization on the combined dataset.
