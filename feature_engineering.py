@@ -60,13 +60,12 @@ class AAIndexEncoder:
         
         # Loop through all 566 loaded indices
         for idx_id, idx_map in self.indices.items():
-            # Vectorized calculation is faster, but loop is clearer for portfolio
+            # Vectorized calculation is faster, but loop is clearer
             total_score = 0
             for aa in sequence:
                 total_score += idx_map.get(aa, 0) # Handle non-standard AA with 0
             
-            # Your original code divided by 20. 
-            # Standard practice is just Mean (total/len), but we can keep your scale.
+            #  Standard practice is mean (total/len)
             features[idx_id] = (total_score / seq_len) 
             
         return features
